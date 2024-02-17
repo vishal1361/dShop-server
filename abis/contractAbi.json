@@ -1,0 +1,474 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_id",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_password",
+        "type": "string"
+      },
+      {
+        "internalType": "address payable",
+        "name": "_account",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_userType",
+        "type": "string"
+      }
+    ],
+    "name": "addUser",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "password",
+            "type": "string"
+          },
+          {
+            "internalType": "address payable",
+            "name": "account",
+            "type": "address"
+          },
+          {
+            "internalType": "enum UserHelper.UserType",
+            "name": "userType",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct UserHelper.User",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_orderId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_productId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_sellerId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_buyerId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_timeStamp",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_expectedDelivery",
+        "type": "string"
+      }
+    ],
+    "name": "buyProduct",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_orderId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_reason",
+        "type": "string"
+      }
+    ],
+    "name": "cancelOrder",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      }
+    ],
+    "name": "findUserByEmail",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "password",
+            "type": "string"
+          },
+          {
+            "internalType": "address payable",
+            "name": "account",
+            "type": "address"
+          },
+          {
+            "internalType": "enum UserHelper.UserType",
+            "name": "userType",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct UserHelper.User",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_productId",
+        "type": "string"
+      }
+    ],
+    "name": "getProductByProductId",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "productId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "ipfsHash",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct StorageFactory.Product",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_sellerId",
+        "type": "string"
+      }
+    ],
+    "name": "getProductBySellerId",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "productId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "ipfsHash",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct StorageFactory.Product[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_id",
+        "type": "string"
+      }
+    ],
+    "name": "getUserInfo",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "password",
+            "type": "string"
+          },
+          {
+            "internalType": "address payable",
+            "name": "account",
+            "type": "address"
+          },
+          {
+            "internalType": "enum UserHelper.UserType",
+            "name": "userType",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct UserHelper.User",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "listAllProducts",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "productId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerId",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "ipfsHash",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct StorageFactory.Product[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_buyerId",
+        "type": "string"
+      }
+    ],
+    "name": "myOrders",
+    "outputs": [
+      {
+        "internalType": "string[]",
+        "name": "",
+        "type": "string[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_productId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_sellerId",
+        "type": "string"
+      }
+    ],
+    "name": "removeProductFromStorage",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_productId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_sellerId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_ipfsHash",
+        "type": "string"
+      }
+    ],
+    "name": "storeProductInStorage",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_userId",
+        "type": "string"
+      }
+    ],
+    "name": "userExists",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_password",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_userType",
+        "type": "string"
+      }
+    ],
+    "name": "verifyUserDetails",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
