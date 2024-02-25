@@ -39,12 +39,12 @@ module.exports.storeProduct = async(req, res) => {
 
 module.exports.removeProductByProductId = async(req, res) => {
     const {sellerId, productId} = req.params;
-
+    console.log(productId);
     try {
         // Removing product from ipfs
         const productInfo = await contract.getProductByProductId(productId);
         const ipfsHash = productInfo.ipfsHash;
-        console.log("Hash to unpin : ",ipfsHash);
+        console.log("Hash to unpin : ",productInfo);
 
         const unpinStatus = await ipfs.unpinDataFromIPFS(ipfsHash);
         console.log(`Status from Ipfs : `, unpinStatus);
@@ -65,7 +65,7 @@ module.exports.getAllProductBySellerId = async (req, res) => {
         // TODO: get product data from the ipfs
         const sellerProducts = productList.map(async ({ productId, sellerId, ipfsHash }) => {
             const resData = await ipfs.getJSONDataFromIPFS(ipfsHash);
-            return { product: { ...resData } };
+            return { product: { ...resData, productId, sellerId } };
           });
           
           // If you want to wait for all the promises to resolve, you can use Promise.all

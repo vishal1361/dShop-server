@@ -18,7 +18,8 @@ pinata.testAuthentication().then((result) => {
   console.log(err);
 });
 
-module.exports.unpinDataFromIPFS = (hash) => {
+module.exports.unpinDataFromIPFS = (hashToUnpin) => {
+  console.log("Hash -> ", hashToUnpin);
     pinata.unpin(hashToUnpin).then((result) => {
       console.log(result);
       return {info: result};
